@@ -9,8 +9,7 @@ DROP TABLE IF EXISTS `table_patient`;
 
 CREATE TABLE `table_patient` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
-  `first_name` varchar(45) DEFAULT NULL,
-  `last_name` varchar(45) DEFAULT NULL,
+  `name` varchar(45) DEFAULT NULL,
   `email` varchar(45) DEFAULT NULL,
   `address` varchar(80) DEFAULT NULL,
   `phone` varchar(15) DEFAULT NULL,
@@ -24,11 +23,11 @@ CREATE TABLE `table_patient` (
 --
 
 INSERT INTO `table_patient` VALUES 
-	(1,'Leslie','Andrews','Leslie@12','roshanara road','+1145355345','45533','2019-07-08'),
-	(2,'Emma','Baumgarten','EmmaBaug@15','Okhla road','+9345455345','45533','2019-07-08'),
-	(3,'Avani','Gupta','AvaniGupta@12','roshanara road rosahanara road','+7145455345','45533','2019-07-08'),
-	(4,'Yuri','Petrov','YuripETRO@12','roshanara road rosahanara road','+7333455345','45533','2019-07-08'),
-	(5,'Juan','Vega','JuanVega@12','roshanara road rosahanara road','+9145454345','45533','2019-07-08');
+	(1,'Leslie','Leslie@12','roshanara road','+1145355345','45533','2019-07-08'),
+	(2,'Emma','EmmaBaug@15','Okhla road','+9345455345','45533','2019-07-08'),
+	(3,'Avani','AvaniGupta@12','roshanara road rosahanara road','+7145455345','45533','2019-07-08'),
+	(4,'Yuri','YuripETRO@12','roshanara road rosahanara road','+7333455345','45533','2019-07-08'),
+	(5,'Juan','JuanVega@12','roshanara road rosahanara road','+9145454345','45533','2019-07-08');
 
 ----------------------------------------------------------------- ------------------------------------     --------- ------------------------------- ---------------
 
