@@ -1,4 +1,4 @@
-Refer to Hospital Management System for more information about this project.
+Refer to Hospital Management System API ver 3.docx for more information about this project.
 
 Hospital Management System Api Version 3.0
 Made by Anmol hira
