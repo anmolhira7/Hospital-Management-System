@@ -18,23 +18,22 @@ public class Patient {
 	@Column(name="id")
 	private int id;
 	
-	@Column(name="first_name")
-	//@NotNull(message="is required")
-	//@Pattern(regexp="^[a-zA-Z0-9]{6,}", message="must be greater than or equal to 6 digits")
-	private String firstName;
-	
-	@Column(name="last_name")
-	private String lastName;
-	
+	@Column(name="name")
+	@NotNull(message="is required")
+	@Pattern(regexp="^.{6,}", message="must be greater than or equal to 6 digits")
+	private String name;
+
 	
 	@Column(name="email")
-	//@Pattern(regexp="^[_A-Za-z0-9-\\\\+]+(\\\\.[_A-Za-z0-9-]+)*@[A-Za-z0-9-]+(\\\\.[A-Za-z0-9]+)*(\\\\.[A-Za-z]{2,})$", message=" is not a valid email address")
+	@Pattern(regexp="^[A-Za-z0-9+_.-]+@(.+)$")
+//	@Pattern(regexp="^[_A-Za-z0-9-\\\\+]+(\\\\.[_A-Za-z0-9-]+)*@[A-Za-z0-9-]+(\\\\.[A-Za-z0-9]+)*(\\\\.[A-Za-z]{2,})$", message=" is not a valid email address")
 	private String email;
 	
 	
 	@Column(name="address")
 	@NotNull(message="is required")
-	//@Pattern(regexp="^[a-zA-Z0-9]{10,}", message="must be greater than or equal to 10 digits")	
+	
+	@Pattern(regexp="^.{10,}$", message="must be greater than or equal to 10 digits")	
 	private String address;
 	
 	@Column(name="phone")
@@ -57,9 +56,9 @@ public class Patient {
 	}
 
 	//Parameterised constructor
-	public Patient(String firstName, String lastName, String email,String phone,String address,String password,String date_of_admission) {
-		this.firstName = firstName;
-		this.lastName = lastName;
+	public Patient(String name, String email,String phone,String address,String password,String date_of_admission) {
+		this.name = name;
+	
 		this.email = email;
 		this.address = address;
 		this.phone = phone;
@@ -76,20 +75,14 @@ public class Patient {
 		this.id = id;
 	}
 
-	public String getFirstName() {
-		return firstName;
+	
+
+	public String getName() {
+		return name;
 	}
 
-	public void setFirstName(String firstName) {
-		this.firstName = firstName;
-	}
-
-	public String getLastName() {
-		return lastName;
-	}
-
-	public void setLastName(String lastName) {
-		this.lastName = lastName;
+	public void setName(String name) {
+		this.name = name;
 	}
 
 	public String getEmail() {
@@ -134,13 +127,14 @@ public class Patient {
 		this.date_of_admission = date_of_admission;
 	}
 
-	
 	@Override
 	public String toString() {
-		return "Employee [id=" + id + ", firstName=" + firstName + ", lastName=" + lastName + ", email=" + email
-				+ ", address=" + address + ", phone=" + phone + ", password=" + password + ", date_of_admission="
-				+ date_of_admission + "]";
+		return "Patient [id=" + id + ", name=" + name + ", email=" + email + ", address=" + address + ", phone=" + phone
+				+ ", password=" + password + ", date_of_admission=" + date_of_admission + "]";
 	}
+
+	
+	
 
 	
 
